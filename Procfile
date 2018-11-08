@@ -1,1 +1,1 @@
-web: gunicorn peaceful-castle-59753:app
+web: gunicorn app:app
