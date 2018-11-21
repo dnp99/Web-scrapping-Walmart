@@ -3,6 +3,7 @@ from selenium import webdriver
 #from bs4 import BeautifulSoup as soup
 from selenium.webdriver.chrome.options import Options
 import bs4
+import os
 
 
 class WebScrapper:
