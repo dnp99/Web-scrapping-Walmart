@@ -14,7 +14,7 @@ class WebScrapper:
 
       def getProductUPC(self):
             # In order to get the page loaded using JavaScript, we need a web driver
-            GOOGLE_CHROME_BIN = /app/.apt/opt/google/chrome/chrome
+            GOOGLE_CHROME_BIN = '/app/.apt/opt/google/chrome/chrome'
 #            chrome_options = Options()
 #            chrome_options.binary_location = GOOGLE_CHROME_BIN
 #            chrome_options.add_argument('--disable-gpu')
