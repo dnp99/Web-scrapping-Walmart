@@ -25,7 +25,7 @@ class WebScrapper:
             #driver = webdriver.Chrome()
             #browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, 
             #chrome_options=chrome_options)
-            CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
+            CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
             chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
             options = webdriver.ChromeOptions()
