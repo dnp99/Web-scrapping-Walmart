@@ -1,6 +1,7 @@
-from bs4 import BeautifulSoup as soup
 from flask import jsonify
 from selenium import webdriver
+#from bs4 import BeautifulSoup as soup
+import bs4
 
 class WebScrapper:
 
@@ -18,8 +19,9 @@ class WebScrapper:
             browser.quit()
 
             # Get the bs4 library to parse it as HTML
-            page_soup = soup(page, "html.parser")
-
+            #page_soup = soup(page, "html.parser")
+            page_soup=bs4.BeautifulSoup(page,'html.parser')
+            
             # Get the required div in the container varibale
             container = page_soup.findAll("a", { "class" : "product-link" })
 
