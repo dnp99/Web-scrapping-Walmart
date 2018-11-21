@@ -12,13 +12,14 @@ class WebScrapper:
 
       def getProductUPC(self):
             # In order to get the page loaded using JavaScript, we need a web driver
-            chrome_options = Options()
+            #chrome_options = Options()
             chrome_options.binary_location = GOOGLE_CHROME_BIN
             chrome_options.add_argument('--disable-gpu')
             chrome_options.add_argument('--no-sandbox')
             #driver = webdriver.Chrome()
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, 
             chrome_options=chrome_options)
+            
             browser.get(self.productListUrl)
             page = browser.execute_script("return document.documentElement.outerHTML")
             browser.close()
