@@ -47,7 +47,7 @@ class WebScrapper:
             
             # Get the required div in the container varibale
             container = page_soup.findAll("a", { "class" : "product-link" })
-
+                
             # Validation not in place yet
-
             return container
+            
