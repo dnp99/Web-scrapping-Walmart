@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import bs4
 import os
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options
 
 
 class WebScrapper:
@@ -18,7 +20,7 @@ class WebScrapper:
 
       def getProductUPC(self):
             # In order to get the page loaded using JavaScript, we need a web driver
-            GOOGLE_CHROME_BIN = '/app/.apt/opt/google/chrome/chrome'
+            
 #            chrome_options = Options()
 #            chrome_options.binary_location = GOOGLE_CHROME_BIN
 #            chrome_options.add_argument('--disable-gpu')
@@ -29,8 +31,10 @@ class WebScrapper:
             #driver = webdriver.Chrome()
             #browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, 
             #chrome_options=chrome_options)
+            
+            
+            GOOGLE_CHROME_BIN = '/app/.apt/opt/google/chrome/chrome'
             CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
-
             chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
             options = webdriver.ChromeOptions()
             options.binary_location = chrome_bin
@@ -38,12 +42,14 @@ class WebScrapper:
             options.add_argument("--no-sandbox")
             options.add_argument('headless')
             options.add_argument('window-size=1200x600')
+            
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
             browser.get(self.productListUrl)
+            browser.set_page_load_timeout(60)
             ele=browser.find_element_by_css_selector('#thumb-10045875 > a > div.product-details-container > span.all-price-sections > div.price-current > div:nth-child(1)')
 #            page = browser.execute_script("return document.documentElement.outerHTML")
-#            browser.close()
-#            browser.quit()
+            browser.close()
+            browser.quit()
 #
 #            # Get the bs4 library to parse it as HTML
 #            #page_soup = soup(page, "html.parser")
