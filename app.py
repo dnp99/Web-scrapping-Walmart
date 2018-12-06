@@ -9,9 +9,9 @@ def hello_world():
 @app.route('/upc/<upc_code>')
 def getProductUPC(upc_code):
 
-      web = WebScrapper(upc_code)
-
-      return web.getProductUPC()
+      web = WebScrapper(upc_code)  
+      return web.getAmazonPrice('https://www.walmart.ca/en/ip/6000017348230')
+    #      return web.getProductUPC()
 
 if __name__ == "__main__":
     app.run()
