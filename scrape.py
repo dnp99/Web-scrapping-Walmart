@@ -2,7 +2,7 @@ from flask import jsonify
 from selenium import webdriver
 #from bs4 import BeautifulSoup as soup
 from selenium.webdriver.chrome.options import Options
-import bs4
+import bs4,requests
 import os
 
 
