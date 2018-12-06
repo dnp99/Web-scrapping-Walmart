@@ -40,10 +40,10 @@ class WebScrapper:
             options.binary_location = chrome_bin
             options.add_argument("--no-sandbox")
             options.add_argument('headless')
-            options.add_argument("start-maximized"); // open Browser in maximized mode
-            options.add_argument("disable-infobars"); // disabling infobars
-            options.add_argument("--disable-extensions"); // disabling extensions
-            options.add_argument("--disable-dev-shm-usage"); // overcome limited resource problems
+            options.add_argument("start-maximized"); 
+            options.add_argument("disable-infobars"); 
+            options.add_argument("--disable-extensions"); 
+            options.add_argument("--disable-dev-shm-usage");
             
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
             temp=browser.get(self.productListUrl)
