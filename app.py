@@ -10,8 +10,7 @@ def hello_world():
 def getProductUPC(upc_code):
 
     web = WebScrapper(upc_code)  
-    return upc_code
-    #web.getProductUPC()
+    return web.getProductUPC()
 
 if __name__ == "__main__":
     app.run()

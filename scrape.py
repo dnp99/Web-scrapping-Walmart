@@ -40,20 +40,21 @@ class WebScrapper:
             options.add_argument('window-size=1200x600')
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
             browser.get(self.productListUrl)
-            page = browser.execute_script("return document.documentElement.outerHTML")
-            browser.close()
-            browser.quit()
-
-            # Get the bs4 library to parse it as HTML
-            #page_soup = soup(page, "html.parser")
-            page_soup=bs4.BeautifulSoup(page,'html.parser')
-            
-            # Get the required div in the container varibale
-            container = page_soup.findAll("a", { "class" : "product-link" })
-
-            # Validation not in place yet
-            print(container)
-            return jsonify({ "ERROR" : str(page) })
+            ele=browser.find_element_by_css_selector('#thumb-10045875 > a > div.product-details-container > span.all-price-sections > div.price-current > div:nth-child(1)')
+#            page = browser.execute_script("return document.documentElement.outerHTML")
+#            browser.close()
+#            browser.quit()
+#
+#            # Get the bs4 library to parse it as HTML
+#            #page_soup = soup(page, "html.parser")
+#            page_soup=bs4.BeautifulSoup(page,'html.parser')
+#            
+#            # Get the required div in the container varibale
+#            container = page_soup.findAll("a", { "class" : "product-link" })
+#
+#            # Validation not in place yet
+#            print(container)
+            return jsonify({ "ERROR" : str(ele.text) })
 #            if len(container) > 0:
 #
 #                  if len(container) > 1:
