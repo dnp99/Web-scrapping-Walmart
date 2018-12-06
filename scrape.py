@@ -50,27 +50,4 @@ class WebScrapper:
 
             # Validation not in place yet
 
-            if len(container) > 0:
-
-                  if len(container) > 1:
-                        # More than one product with the same UPC was found
-                        return jsonify({ "ERROR" : "MANY" })
-                  else:
-                        # Only one product was found
-                        # Get the image
-                        image_url = page_soup.findAll("img", { "class" : "image" })
-                        image_url = 'https://' + image_url[0]["src"]
-                        # Get the title
-                        title = page_soup.findAll("h2", { "class" : "thumb-header"})
-                        title = title[0].text
-                        # Get the price
-                        price = page_soup.findAll("div", { "class" : "price-current" })
-                        price = price[0].text.strip()
-
-                        # print(image_url + '\n' + title + '\n' + price)
-
-                        return jsonify({"image_url" : image_url, "title" : title, "price" : price})
-
-            else:
-                  # Send an error code
-                  return jsonify({ "ERROR" : "njnjwn" })
+            return container
