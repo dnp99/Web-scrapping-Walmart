@@ -46,7 +46,9 @@ class WebScrapper:
             options.add_argument('--disable-dev-shm-usage');
             
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
-            temp=browser.get(self.productListUrl)
+#            temp=browser.get(self.productListUrl)
+            temp=browser.get('https://www.walmart.ca/search/6000020342793')
+            
             #browser.set_page_load_timeout(60)
             #ele=browser.find_element_by_css_selector('#thumb-10045875 > a > div.product-details-container > span.all-price-sections > div.price-current > div:nth-child(1)')
 #            page = browser.execute_script("return document.documentElement.outerHTML")
