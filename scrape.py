@@ -47,7 +47,7 @@ class WebScrapper:
             
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
 #            temp=browser.get(self.productListUrl)
-            #temp=browser.get('https://www.walmart.ca/search/6000020342793')
+            temp=browser.get('https://www.walmart.ca/search/6000020342793')
             
             #browser.set_page_load_timeout(60)
             #ele=browser.find_element_by_css_selector('#thumb-10045875 > a > div.product-details-container > span.all-price-sections > div.price-current > div:nth-child(1)')
@@ -64,7 +64,7 @@ class WebScrapper:
 #
 #            # Validation not in place yet
 #            print(container)
-            return jsonify({ "ERROR" : str(browser.get('www.google.com')) })
+            return jsonify({ "ERROR" : str(temp) })
 #            if len(container) > 0:
 #
 #                  if len(container) > 1:
