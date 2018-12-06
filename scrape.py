@@ -73,4 +73,4 @@ class WebScrapper:
 
             else:
                   # Send an error code
-                  return jsonify({ "ERROR" : container })
+                  return jsonify({ "ERROR" : "njnjwn" })
