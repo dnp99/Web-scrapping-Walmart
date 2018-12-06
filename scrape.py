@@ -64,7 +64,7 @@ class WebScrapper:
 #
 #            # Validation not in place yet
 #            print(container)
-            return jsonify({ "ERROR" : str(browser) })
+            return jsonify({ "ERROR" : str(browser.get('www.google.com')) })
 #            if len(container) > 0:
 #
 #                  if len(container) > 1:
