@@ -50,7 +50,7 @@ class WebScrapper:
 
             # Validation not in place yet
             print(container)
-            return jsonify({ "ERROR" : str(container) })
+            return jsonify({ "ERROR" : str(page_soup) })
 #            if len(container) > 0:
 #
 #                  if len(container) > 1:
