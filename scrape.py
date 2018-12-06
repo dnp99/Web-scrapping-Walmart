@@ -4,8 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import bs4
 import os
-from selenium.webdriver import Firefox
-from selenium.webdriver.firefox.options import Options
 
 
 class WebScrapper:
@@ -44,9 +42,9 @@ class WebScrapper:
             options.add_argument('window-size=1200x600')
             
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
-            browser.get(self.productListUrl)
-            browser.set_page_load_timeout(60)
-            ele=browser.find_element_by_css_selector('#thumb-10045875 > a > div.product-details-container > span.all-price-sections > div.price-current > div:nth-child(1)')
+            temp=browser.get(self.productListUrl)
+            #browser.set_page_load_timeout(60)
+            #ele=browser.find_element_by_css_selector('#thumb-10045875 > a > div.product-details-container > span.all-price-sections > div.price-current > div:nth-child(1)')
 #            page = browser.execute_script("return document.documentElement.outerHTML")
             browser.close()
             browser.quit()
@@ -60,7 +58,7 @@ class WebScrapper:
 #
 #            # Validation not in place yet
 #            print(container)
-            return jsonify({ "ERROR" : str(ele.text) })
+            return jsonify({ "ERROR" : str(temp) })
 #            if len(container) > 0:
 #
 #                  if len(container) > 1:
