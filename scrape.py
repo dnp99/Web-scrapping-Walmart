@@ -38,10 +38,12 @@ class WebScrapper:
             chrome_bin = os.environ.get('GOOGLE_CHROME_SHIM', None)
             options = webdriver.ChromeOptions()
             options.binary_location = chrome_bin
-            options.add_argument("--disable-gpu")
             options.add_argument("--no-sandbox")
             options.add_argument('headless')
-            options.add_argument('window-size=1200x600')
+            options.add_argument("start-maximized"); // open Browser in maximized mode
+            options.add_argument("disable-infobars"); // disabling infobars
+            options.add_argument("--disable-extensions"); // disabling extensions
+            options.add_argument("--disable-dev-shm-usage"); // overcome limited resource problems
             
             browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
             temp=browser.get(self.productListUrl)
